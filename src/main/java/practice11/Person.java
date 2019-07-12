@@ -1,5 +1,7 @@
 package practice11;
 
+import java.util.Objects;
+
 public class Person {
     private int id;
     private String name;
@@ -30,7 +32,7 @@ public class Person {
     }
 
     public String introduce() {
-        return "My name is " + name + ". I am " + age + " years old.";
+        return String.format("My name is %s. I am %s years old.", name, age);
     }
 
     @Override
@@ -40,5 +42,10 @@ public class Person {
             return person.id == id;
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age);
     }
 }

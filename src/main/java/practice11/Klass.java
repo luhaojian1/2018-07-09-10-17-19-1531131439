@@ -9,16 +9,16 @@ public class Klass {
     private List<Student> members = new ArrayList<>();
     private Teacher teacher;
 
+    public Klass(int number) {
+        this.number = number;
+    }
+
     public Teacher getTeacher() {
         return teacher;
     }
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
-    }
-
-    public Klass(int number) {
-        this.number = number;
     }
 
     public int getNumber() {
@@ -34,24 +34,20 @@ public class Klass {
     }
 
     public void assignLeader(Student leader) {
-        if (members.contains(leader)){
+        if (members.contains(leader)) {
             this.leader = leader;
-            if ( teacher != null )
-            System.out.print("I am "+ teacher.getName() +". I know "+ leader.getName() +" become Leader of "+ getDisplayName() +".\n");
-        }
-
-        else System.out.print("It is not one of us.\n");
+            if (teacher != null)
+                System.out.print(String.format("I am %s. I know %s become Leader of %s.\n", teacher.getName(), leader.getName(), getDisplayName()));
+        } else System.out.print("It is not one of us.\n");
     }
 
     public void appendMember(Student student) {
         members.add(student);
         if (teacher != null)
-            System.out.print("I am "+ teacher.getName() +". I know "+ student.getName() +" has joined "+ getDisplayName() +".\n");
+            System.out.print(String.format("I am %s. I know %s has joined %s.\n", teacher.getName(), student.getName(), getDisplayName()));
     }
 
-    public boolean isIn(Student student){
-       if (student.getKlass().getNumber() == number)
-            return true;
-        else return false;
+    boolean isIn(Student student) {
+        return student.getKlass().getNumber() == number;
     }
 }

@@ -34,8 +34,8 @@ public class Klass {
         members.add(student);
     }
 
-    public boolean isIn(Student student){
-       if (student.getKlass().getNumber() == number)
+    public boolean isIn(Student student) {
+        if (student.getKlass().getNumber() == number)
             return true;
         else return false;
     }

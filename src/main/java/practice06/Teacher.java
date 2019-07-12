@@ -17,10 +17,10 @@ public class Teacher extends Person {
     }
 
     @Override
-    public String introduce(){
-      if (klass == null)
-         return super.introduce()+" I am a Teacher. I teach No Class.";
-      else return super.introduce()+" I am a Teacher. I teach Class "+ klass +".";
+    public String introduce() {
+        if (klass == null)
+            return super.introduce() + " I am a Teacher. I teach No Class.";
+        else return super.introduce() + " I am a Teacher. I teach Class " + klass + ".";
     }
 
 }
